@@ -7,12 +7,13 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
 # Load the trained model and vectorizer
+# Load the trained model and vectorizer
 model_file = 'modle.pkl'
 with open(model_file, 'rb') as f:
     model = pickle.load(f)
 
-vectorizer = model['vectorizer']
-classifier = model['logreg']
+vectorizer = model['vectorizer']  # Extract the vectorizer from the model
+classifier = model['logreg']  # Extract the classifier from the model
 
 # Function for text preprocessing
 def text_preprocess(text):
